@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инвентаризация</title>
+</head>
+<body>
+    <div
+        class="div__table_block"
+    >
+        <div
+            class="div__page_title_field"
+        >
+            <h3 id="h3__title_of_the_inventory_table"></h3>
+        </div>
+        <div
+            class="div__table"
+        >
+            <div
+                class="div__table_header"
+            >
+                <div
+                    class="div__the_auto_numbering_column"
+                >
+                    <h3>№ п/п</h3>
+                    <div class="div__decorative_division_No_1" ></div>
+                </div>
+                <div
+                    class="div__Full_NAME_column"
+                >
+                    <div
+                        class="div__wrapping_h3"
+                    >
+                        <h3>Сотрудник</h3>
+                    </div>
+                    <div class="div__decorative_division_No_2" ></div>
+                </div>
+                <div
+                    class="div__the_column_with_the_employee_s_index_number"
+                >
+                    <div
+                        class="div__wrapping_h3"
+                    >
+                        <h3>Таб №</h3>
+                    </div>
+                    <div class="div__decorative_division_No_3" ></div>
+                </div>
+                <div
+                    class="div__column_with_the_type_of_equipment"
+                >
+                    <div
+                        class="div__wrapping_h3"
+                    >
+                        <h3>Тип техники</h3>
+                    </div>
+                    <div class="div__decorative_division_No_4" ></div>
+                </div>
+                <div
+                    class="div__column_with_the_name_of_the_equipment"
+                >
+                    <div
+                        class="div__wrapping_h3"
+                    >
+                        <h3>Техника</h3>
+                    </div>
+                    <div class="div__decorative_division_No_5" ></div>
+                </div>
+                <div
+                    class="div__column_with_the_equipment_inventory_number"
+                >
+                    <div
+                        class="div__wrapping_h3"
+                    >
+                        <h3>Инв №</h3>
+                    </div>
+                </div>
+            </div>
+            <div
+                id="div__the_body_of_the_table"
+            >
+                
+            </div>
+            <!-- <table>
+                <thead>
+                    <tr>
+                        <th>№ П/П</th>
+                        <th>Сотрудник</th>
+                        <th>Таб №</th>
+                        <th>Тип техники</th>
+                        <th>Техника</th>
+                        <th>Инв №</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody__template_table">
+
+                </tbody>
+            </table> -->
+        </div>
+    </div>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            padding: 40px 40px 40px 40px;
+            box-sizing: border-box;
+        }
+        .div__table_block {
+            width: 100%;
+            height: 100%;
+            background: rgb(223,160,200);
+            background: linear-gradient(45deg, rgba(223,160,200,0.4962185557816877) 0%, rgba(223,160,200,1) 50%, rgba(223,160,200,0.4962185557816877) 100%);
+            border-radius: 40px;
+            box-sizing: border-box;
+            padding: 40px 40px 40px 40px;
+        }
+        .div__page_title_field {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 50px;
+            background-color: #EEF0F6;
+            border-radius: 40px;
+            justify-content: center;
+            align-items: center;
+        }
+        #h3__title_of_the_inventory_table {
+            font-family: "Inter", sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            font-style: normal;
+            color: #596EBD;
+        }
+        .div__table {
+            margin: 20px 0px 20px 0px;
+        }
+        .div__table_header {
+            display: flex;
+            flex-direction: row;
+
+            height: 50px;
+
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+
+            background-color: #EEF0F6;
+        }
+
+        .div__table_header .div__the_auto_numbering_column {
+            display: flex;
+            flex-direction: row;
+            flex: 0 0 7%;
+            align-items: center
+        }
+        .div__table_header .div__the_auto_numbering_column h3 {
+            padding: 20px 10px 20px 20px;
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            color: #596EBD;
+        }
+        .div__table_header .div__decorative_division_No_1 {
+            width: 1px;
+            height: 20px;
+            background-color: rgba(89,110,189,0.3);
+        }
+
+        .div__table_header .div__Full_NAME_column {
+            width: 40%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .div__table_header .div__Full_NAME_column .div__wrapping_h3 {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 35%;
+        }
+        .div__table_header .div__Full_NAME_column .div__wrapping_h3 h3 {
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            color: #596EBD;
+        }
+        .div__table_header .div__decorative_division_No_2 {
+            width: 1px;
+            height: 20px;
+            background-color: rgba(89,110,189,0.3);
+        }
+
+        .div__table_header .div__the_column_with_the_employee_s_index_number {
+            width: 4%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .div__table_header .div__the_column_with_the_employee_s_index_number .div__wrapping_h3 {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 20%;
+        }
+        .div__table_header .div__the_column_with_the_employee_s_index_number .div__wrapping_h3 h3 {
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            color: #596EBD;
+        }
+        .div__table_header .div__decorative_division_No_3 {
+            width: 1px;
+            height: 20px;
+            background-color: rgba(89,110,189,0.3);
+        }
+
+        .div__table_header .div__column_with_the_type_of_equipment {
+            width: 22%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .div__table_header .div__column_with_the_type_of_equipment .div__wrapping_h3 {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 35%;
+        }
+        .div__table_header .div__column_with_the_type_of_equipment .div__wrapping_h3 h3 {
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            color: #596EBD;
+        }
+        .div__table_header .div__decorative_division_No_4 {
+            width: 1px;
+            height: 20px;
+            background-color: rgba(89,110,189,0.3);
+        }
+
+        .div__table_header .div__column_with_the_name_of_the_equipment {
+            width: 22%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .div__table_header .div__column_with_the_name_of_the_equipment .div__wrapping_h3 {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 40%;
+        }
+        .div__table_header .div__column_with_the_name_of_the_equipment .div__wrapping_h3 h3 {
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            color: #596EBD;
+        }
+        .div__table_header .div__decorative_division_No_5 {
+            width: 1px;
+            height: 20px;
+            background-color: rgba(89,110,189,0.3);
+        }
+
+        .div__table_header .div__column_with_the_equipment_inventory_number {
+            width: 4%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .div__table_header .div__column_with_the_equipment_inventory_number .div__wrapping_h3 {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15%;
+        }
+        .div__table_header .div__column_with_the_equipment_inventory_number .div__wrapping_h3 h3 {
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            color: #596EBD;
+        }
+
+
+
+
+        #div__the_body_of_the_table {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: #596EBD;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+
+
+
+
+        .div__table_row {
+            width: 100%;    
+            height: 35px;
+            display: flex;
+            flex-direction: row;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .div__table_row .div__the_auto_numbering_column {
+            display: flex;
+            flex: 0 0 70px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: right;
+        }
+        .div__table_row .div__the_auto_numbering_column h3 {
+            padding: 20px 10px 20px 20px;
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            color: #FFFFFF;
+        }
+        .div__table_row .div__decorative_division_No_1 {
+            width: 1px;
+            height: 20px;
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        .div__table_row .div__Full_NAME_column {
+            width: 43%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .div__table_row .div__Full_NAME_column .div__wrapping_h3 {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin-left: 3%;
+        }
+        .div__table_row .div__Full_NAME_column .div__wrapping_h3 h3 {
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            color: #FFFFFF;
+        }
+        .div__table_row .div__decorative_division_No_2 {
+            width: 1px;
+            height: 20px;
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        .div__table_row .div__the_column_with_the_employee_s_index_number {
+            width: 4%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .div__table_row .div__the_column_with_the_employee_s_index_number .div__wrapping_h3 {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 20%;
+        }
+        .div__table_row .div__the_column_with_the_employee_s_index_number .div__wrapping_h3 h3 {
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            color: #FFFFFF;
+        }
+        .div__table_row .div__decorative_division_No_3 {
+            width: 1px;
+            height: 20px;
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        .div__table_row .div__column_with_the_type_of_equipment {
+            width: 22%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .div__table_row .div__column_with_the_type_of_equipment .div__wrapping_h3 {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 5%;
+        }
+        .div__table_row .div__column_with_the_type_of_equipment .div__wrapping_h3 h3 {
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            color: #FFFFFF;
+        }
+        .div__table_row .div__decorative_division_No_4 {
+            width: 1px;
+            height: 20px;
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        .div__table_row .div__column_with_the_name_of_the_equipment {
+            width: 22%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .div__table_row .div__column_with_the_name_of_the_equipment .div__wrapping_h3 {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 4%;
+        }
+        .div__table_row .div__column_with_the_name_of_the_equipment .div__wrapping_h3 h3 {
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            color: #FFFFFF;
+        }
+        .div__table_row .div__decorative_division_No_5 {
+            width: 1px;
+            height: 20px;
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        .div__table_row .div__column_with_the_equipment_inventory_number {
+            width: 4%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .div__table_row .div__column_with_the_equipment_inventory_number .div__wrapping_h3 {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 13%;
+        }
+        .div__table_row .div__column_with_the_equipment_inventory_number .div__wrapping_h3 h3 {
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            color: #FFFFFF;
+        }
+
+        
+    </style>
+    <script>
+        let data_for_the_table = '';
+
+        function gettingTheCurrentDate() {
+            const date = new Date();
+            let day = date.getDay();
+            if (day < 10) {
+                day = `0${day}`;
+            }
+            let month = date.getMonth();
+            if (month < 10) {
+                month = `0${month}`;
+            }
+            let year = date.getFullYear()
+            return `${day}.${month}.${year}`;
+        }
+        
+        function gettingDataForATable(cabinet_number, callback) {
+            try {
+                let xhr = new XMLHttpRequest();
+                xhr.open('GET', `http://localhost:3000/invent?cabinet_number=${cabinet_number}`);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.send();
+                xhr.onload = () => {
+                    if (xhr.status == 200) {
+                        data_for_the_table = xhr.response
+                        callback();
+                        return xhr.response;
+                    }
+                };
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        function templateEngine(data = data_for_the_table) {
+            
+            let array_of_table_rows = [];
+            let line_number = 1;
+            for ( let obj of JSON.parse(data) ) {
+                array_of_table_rows.push(`
+                    <div
+                        class="div__table_row"
+                    >
+                        <div
+                            class="div__the_auto_numbering_column"
+                        >
+                            <h3>${line_number}</h3>
+                            <div class="div__decorative_division_No_1" ></div>
+                        </div>
+                        <div
+                            class="div__Full_NAME_column"
+                        >
+                            <div
+                                class="div__wrapping_h3"
+                            >
+                                <h3>${obj.fcs}</h3>
+                            </div>
+                            <div class="div__decorative_division_No_2" ></div>
+                        </div>
+                        <div
+                            class="div__the_column_with_the_employee_s_index_number"
+                        >
+                            <div
+                                class="div__wrapping_h3"
+                            >
+                                <h3>${obj.id}</h3>
+                            </div>
+                            <div class="div__decorative_division_No_3" ></div>
+                        </div>
+                        <div
+                            class="div__column_with_the_type_of_equipment"
+                        >
+                            <div
+                                class="div__wrapping_h3"
+                            >
+                                <h3>${obj.type}</h3>
+                            </div>
+                            <div class="div__decorative_division_No_4" ></div>
+                        </div>
+                        <div
+                            class="div__column_with_the_name_of_the_equipment"
+                        >
+                            <div
+                                class="div__wrapping_h3"
+                            >
+                                <h3>${obj.name}</h3>
+                            </div>
+                            <div class="div__decorative_division_No_5" ></div>
+                        </div>
+                        <div
+                            class="div__column_with_the_equipment_inventory_number"
+                        >
+                            <div
+                                class="div__wrapping_h3"
+                            >
+                                <h3>${obj.tech_id}</h3>
+                            </div>
+                            <div class="div__decorative_division_No_6" ></div>
+                        </div>
+                    </div>
+                `);
+                line_number += line_number;
+            }
+            
+            document.getElementById('div__the_body_of_the_table').innerHTML = array_of_table_rows.join();
+            return;
+        }
+
+        const cabinet_number = Number(window.location.search.substring(1).split("=")[1]);
+        const header_line_template = `Инвентаризационная опись кабинета №${cabinet_number} на ${gettingTheCurrentDate()}`;
+        
+
+        document.getElementById('h3__title_of_the_inventory_table').innerText = header_line_template;
+        gettingDataForATable(cabinet_number, templateEngine)
+    </script>
+</body>
+</html>

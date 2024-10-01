@@ -1,0 +1,104 @@
+<div
+            class="div__component_field"
+        >
+            <div
+                class="div__the_field_of_the_add_and_search_buttons"
+            >
+                <button (click)="onClick.emit('technic')">Добавить технику</button>
+                <input type="text" placeholder="Поиск" id="search" name="search" [(ngModel)]="string__search_text" (keyup.enter)="performingASearchByAGivenValue()"/>
+            </div>
+            <hr>
+            <div
+                class="div__table"
+            >
+                <div
+                    class="div__table_header"
+                >
+                    <div
+                        class="div__the_auto_numbering_column"
+                    >
+                        <h3>Инв №</h3>
+                        <div class="div__decorative_division_No_1" ></div>
+                    </div>
+                    <div
+                        class="div__column_with_names_of_equipment"
+                    >
+                        <div class="div__wrapping_h3" >
+                            <h3>Наименование</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="div__column_with_the_type_of_equipment"
+                    >
+                        <div class="div__decorative_division_No_2" ></div>
+                        <h3>Тип</h3>
+                    </div>
+                </div>
+                <div
+                    class="div__the_body_of_the_table"
+                >
+                @for ( technic of array__equipment_facilities; track $index ) {
+                        <div
+                            class="div__table_row"
+                        >
+                            <div
+                                class="div__the_auto_numbering_column"
+                            >
+                                <h3>{{ technic.id }}</h3>
+                                <div class="div__decorative_division_No_1" ></div>
+                            </div>
+                            <div
+                                class="div__column_with_names_of_equipment"
+                            >
+                                <h3>{{ technic.name }}</h3>
+                            </div>
+                            <div
+                                class="div__column_with_the_type_of_equipment"
+                            >
+                                <div class="div__decorative_division_No_2" ></div>
+                                <h3>{{ technic.type }}</h3>
+                            </div>
+                            <div
+                                class="div__column_with_delete_button"
+                            >
+                                <button (click)="deleteTechnic(technic.id)">
+                                    <img ngSrc="minus.svg" width="20" height="20" alt="" />
+                                </button>
+                            </div>
+                            <div
+                                class="div__column_with_an_edit_button"
+                            >
+                                <button (click)="editingEquipmentData($index)">
+                                    <img ngSrc="pen.svg" width="20" height="20" alt="" />
+                                </button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div
+                class="div__the_field_of_page_switching_buttons"
+            >
+                @if (number__the_sum_of_the_list_pages >= 2) {
+                    <button id="button__the_table_scroll_button_to_the_left" (click)="changingTheDisplayedListPage(number__current_page - 1)">
+                        <svg class="svg__vector" width="8" height="13" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="svg__path_left" d="M11.6599 22.7702L12.7766 21.618C12.9257 21.4644 13 21.2876 13 21.0876C13 20.8882 12.9257 20.7114 12.7766 20.5578L3.9983 11.5001L12.7763 2.44281C12.9254 2.28919 12.9998 2.11241 12.9998 1.9127C12.9998 1.71292 12.9254 1.53614 12.7763 1.3826L11.6596 0.230542C11.5108 0.0766858 11.3395 0 11.1458 0C10.9523 0 10.781 0.0769279 10.6322 0.230542L0.223284 10.97C0.0744022 11.1236 -2.12374e-08 11.3004 -2.12374e-08 11.5001C-2.12374e-08 11.6998 0.0744022 11.8764 0.223284 12.0298L10.6322 22.7702C10.7811 22.9237 10.9524 23 11.1458 23C11.3395 23 11.5108 22.9237 11.6599 22.7702Z" fill="#596EBD"/>
+                        </svg>
+                    </button>
+                    @for ( page_number of array__page_numbering; track $index ) {
+                        <button 
+                            [style.background-color]="$index==number__current_page ? '#596EBD' : 'rgba(0,0,0,0)'"
+                            [style.color]="$index==number__current_page ? '#FFFFFF' : '#596EBD'"
+                            class="button__the_button_to_go_to_the_numbered_page" 
+                            id="button_{{ $index }}" 
+                            (click)="changingTheDisplayedListPage($index)"
+                        >{{ page_number }}</button>
+                    }
+                    <button id="button__the_table_scroll_button_to_the_right" (click)="changingTheDisplayedListPage(number__current_page + 1)">
+                        <svg class="svg__vector" width="8" height="13" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="svg_path_right" d="M1.3401 0.229813L0.22344 1.38204C0.0743236 1.53557 0 1.71243 0 1.91238C0 2.11184 0.0743236 2.28862 0.22344 2.44216L9.0017 11.4999L0.223675 20.5572C0.0745585 20.7108 0.000234578 20.8876 0.000234578 21.0873C0.000234578 21.2871 0.0745585 21.4639 0.223675 21.6174L1.34041 22.7695C1.48921 22.9233 1.66055 23 1.85418 23C2.04766 23 2.21899 22.9231 2.3678 22.7695L12.7767 12.03C12.9256 11.8764 13 11.6996 13 11.4999C13 11.3002 12.9256 11.1236 12.7767 10.9702L2.3678 0.229813C2.21892 0.0762804 2.04758 -5.52933e-07 1.85418 -5.52933e-07C1.66055 -5.52933e-07 1.48921 0.0762804 1.3401 0.229813Z" fill="#596EBD"/>
+                        </svg>
+                    </button>
+                }
+            </div>
+        </div>

@@ -1,0 +1,143 @@
+.div__component_field {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.div__the_field_of_the_add_and_search_buttons {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.div__the_field_of_the_add_and_search_buttons button {
+    height: 40px;
+    flex-grow: 0.5;
+    border-radius: 40px;
+    border: none;
+    background-color: #596EBD;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: #FFFFFF;
+    margin: 20px 20px 20px 20px;
+}
+.div__the_field_of_the_add_and_search_buttons input {
+    flex-grow: 3.5;
+    margin: 20px 20px 20px 0px;
+    outline: 1px solid #596EBD;
+    border: none;
+    border-radius: 40px;
+    background-color: rgba(0,0,0,0);
+    background-image: url('../../../../assets/search.svg');
+    background-position: 27px;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    padding-left: 54px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: #25255F;
+}
+hr {
+    width: 96%;
+    margin: auto;
+    border: 1px solid rgba(255,255,255, 0.3);
+}
+.div__table {
+    margin: 20px 20px 20px 20px;
+}
+.div__table_header {
+    display: flex;
+    flex-direction: row;
+
+    height: 50px;
+
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+
+    background-color: #EEF0F6;
+}
+.div__table_header .div__the_auto_numbering_column {
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 75px;
+    align-items: center
+}
+.div__table_header .div__the_auto_numbering_column h3 {
+    padding: 20px 10px 20px 20px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: #596EBD;
+}
+.div__table_header .div__the_auto_numbering_column .div__decorative_division_No_1 {
+    width: 1px;
+    height: 20px;
+    background-color: rgba(89,110,189,0.3);
+}
+.div__table_header .div__Full_NAME_column {
+    width: 100%;
+}
+.div__table_header .div__Full_NAME_column .div__wrapping_h3 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.div__table_header .div__Full_NAME_column .div__wrapping_h3 h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: #596EBD;
+}
+.div__table_header .div__cabinet_number_column {
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 197px;
+    margin-left: auto;
+    margin-right: 0px;
+    align-items: center;
+}
+.div__table_header .div__cabinet_number_column .div__decorative_division_No_2 {
+    width: 1px;
+    height: 20px;
+    background-color: rgba(89,110,189,0.3);
+}
+.div__table_header .div__cabinet_number_column h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: #596EBD;
+    margin-left: 20px;
+    margin-right: auto;
+}
+.div__the_body_of_the_table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #596EBD;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.div__table_row {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.div__table_row:last-child {
+    border-bottom: none;
+}
+.div__table_row .div__the_auto_numbering_column {
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 75px;
+    align-items: center;
+}

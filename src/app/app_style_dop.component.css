@@ -1,0 +1,101 @@
+.div__employee_selection_background {
+    width: 100%;
+    padding: 20px 20px 10px 20px;
+  }
+  .div__employee_selection_background select {
+    width: 480px;
+    line-height: 1.4;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid #596EBD;
+    padding: 20px 20px 20px 20px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: #596EBD;
+  }
+  .div__the_substrate_of_the_choice_of_technique {
+    width: 100%;
+    padding: 10px 20px 20px 20px;
+  }
+  .div__the_substrate_of_the_choice_of_technique select {
+    width: 480px;
+    line-height: 1.4;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid #596EBD;
+    padding: 20px 20px 20px 20px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: #596EBD;
+  }
+
+  .div__the_modal_window_for_the_successful_deletion {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: relative;
+    border-radius: 40px;
+  }
+  .div__the_modal_window_for_the_successful_deletion h3 {
+    padding: 40px 20px 10px 20px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: #596EBD;
+  }
+  
+  .div__modal_editing_window {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: relative;
+    border-radius: 40px;
+    padding-top: 20px;
+  }
+  .div__modal_editing_window input {
+    display: block;
+    width: 460px;
+    height: 50px;
+    border: 1px solid #596EBD;
+    border-radius: 30px;
+    padding-left: 20px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: #596EBD;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .div__modal_editing_window input:first-child {
+    margin-bottom: 20px;
+  }
+  .div__modal_editing_window input:last-child {
+    margin-bottom: 10px;
+  }
+
+  .div__modal_editing_window select {
+    display: block;
+    width: 480px;
+    line-height: 1.4;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid #596EBD;
+    padding: 20px 20px 20px 20px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: #596EBD;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }

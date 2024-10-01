@@ -1,0 +1,139 @@
+.div__table_row .div__column_with_the_type_of_equipment {
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 300px;
+    margin-left: auto;
+    margin-right: 0;
+    align-items: center;
+}
+.div__table_row .div__column_with_the_type_of_equipment .div__decorative_division_No_2 {
+    width: 1px;
+    height: 20px;
+    background-color: rgba(255,255,255,0.3);
+}
+.div__table_row .div__column_with_the_type_of_equipment h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: #FFFFFF;
+    padding-left: 20px;
+}
+.div__table_row .div__column_with_delete_button {
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 38px;
+    margin-right: 0;
+    align-items: center;
+}
+.div__table_row .div__column_with_delete_button button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background-color: #EEF0F6;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.div__table_row .div__column_with_delete_button button img {
+    width: 12px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.div__table_row .div__column_with_an_edit_button {
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 54px;
+    margin-right: 0;
+    align-items: center;
+}
+.div__table_row .div__column_with_an_edit_button button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background-color: #EEF0F6;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.div__table_row .div__column_with_an_edit_button button img {
+    width: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.div__the_field_of_page_switching_buttons {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;    
+    display: flex;
+    justify-content: center;
+}
+#button__the_table_scroll_button_to_the_left {
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #596EBD;
+    background-color: rgba(0,0,0,0);
+    border-radius: 15px;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+.svg__vector {
+    margin-left: auto;
+    margin-right: auto;
+}
+#button__the_table_scroll_button_to_the_left:hover {
+    background-color: #596EBD;
+    cursor: pointer;
+}
+#svg__path_left {
+    fill: #596EBD;
+    pointer-events: auto;
+}
+#button__the_table_scroll_button_to_the_left:hover #svg__path_left {
+    fill: #FFFFFF;
+}
+.button__the_button_to_go_to_the_numbered_page {
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #596EBD;
+    background-color: rgba(0,0,0,0);
+    border-radius: 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: #596EBD;
+}
+.button__the_button_to_go_to_the_numbered_page:hover {
+    cursor: pointer;
+}
+#button__the_table_scroll_button_to_the_right {
+    width: 35px;
+    height: 35px;
+    margin-left: auto;
+    margin-bottom: 20px;
+    border: 1px solid #596EBD;
+    background-color: rgba(0,0,0,0);
+    border-radius: 14px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+#button__the_table_scroll_button_to_the_right:hover {
+    background-color: #596EBD;
+    cursor: pointer;
+}
+#svg_path_right {
+    fill: #596EBD;
+    pointer-events: auto;
+}
+#button__the_table_scroll_button_to_the_right:hover #svg_path_right {
+    fill: #FFFFFF;
+}

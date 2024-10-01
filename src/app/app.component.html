@@ -1,0 +1,216 @@
+<div class="a_huge_block">
+    <system-interface (onClick)="upCase($event)" ></system-interface>
+    <div
+      class="div__the_substrate_of_modal_windows"
+      [style]="{display:opening_the_modal_menu}"
+    >
+      <div
+        class="div__a_block_for_positioning"
+      >
+        <div
+          class="div__modal_window_for_adding_an_employee"
+          [style]="{display:opening_the_modal_menu__staff}"
+        > <!-- Модальное окно для добавления сотрудников -->
+          <div
+            class="div__the_background_of_the_full_NAME_input_field"
+          >
+            <input placeholder="ФИО сотрудника" [(ngModel)]="data_employees_full_name"/>
+          </div>
+          <div
+            class="div__the_background_of_the_cabinet_number_input_field"
+          >
+            <input placeholder="Номер кабинета" [(ngModel)]="data_employees_office_number"/>
+          </div>
+          <div
+            class="div__the_background_of_the_control_buttons"
+          >
+            <button (click)="hidingTheModalWindow('staff')">Отмена</button>
+            <button (click)="sendingDataAboutTheCreationofANewEmployee();hidingTheModalWindow('staff')">Добавление</button>
+          </div>
+        </div>
+        <div
+          class="div__modal_window_for_adding_equipment"
+          [style]="{display:opening_the_modal_menu__technic}"
+        > <!-- Модальное окно для добавления техники -->
+          <div
+            class="div__the_substrate_for_entering_the_name_of_the_equipment"
+          >
+            <input placeholder="Наименование техники"[(ngModel)]="data_name_of_the_equipment"/>
+          </div>
+          <div
+            class="div__the_substrate_for_choosing_the_type_of_equipment"
+          >
+            <select [(ngModel)]="data_name_of_the_selected_type_of_equipment">
+              <option value="" hidden disabled selected>Тип техники</option>
+              @for ( elem of an_array_of_technical_data; track $index ) {
+                <option value="{{ elem.id }}">{{ elem.type }}</option>
+              }
+            </select>
+          </div>
+          <div
+            class="div__the_background_of_the_control_buttons"
+          >
+            <button (click)="hidingTheModalWindow('technic')">Отмена</button>
+            <button (click)="sendingDataAboutAddingEquipment();hidingTheModalWindow('technic')">Добавление</button>
+          </div>
+        </div>
+        <div
+          class="div__modal_window_for_adding_types_of_equipment"
+          [style]="{display:opening_the_modal_menu__type_of_equipment}"
+        > <!-- Модальное окно для добавления типа техники -->
+          <div
+            class="div__the_substrate_for_entering_the_name_of_the_equipment"
+          >
+            <input placeholder="Наименование типа техники" [(ngModel)]="data_the_name_of_the_introduced_type_of_equipment"/>
+          </div>
+          <div
+            class="div__the_background_of_the_control_buttons"
+          >
+            <button (click)="hidingTheModalWindow('type_of_equipment')">Отмена</button>
+            <button (click)="sendingDataAboutAddingATypeOfEquipment();hidingTheModalWindow('type_of_equipment')">Добавление</button>
+          </div>
+        </div>
+        <div
+          class="div__modal_window_for_adding_equipment_to_employees"
+          [style]="{display:opening_the_modal_menu__employee_equipment}"
+        > <!-- Модальное окно для соотношения техники с сотрудниками -->
+          <div
+            class="div__employee_selection_background"
+          >
+            <select [(ngModel)]="id_of_the_selected_employee">
+              <option value="" hidden disabled selected>ФИО сотрудника</option>
+              @for ( elem of array_of_full_names_of_employees; track $index ) {
+                <option value="{{ elem.id }}">{{ elem.fcs }}</option>
+              }
+            </select>
+          </div>
+          <div
+            class="div__the_substrate_of_the_choice_of_technique"
+          >
+            <select [(ngModel)]="id_of_the_selected_equipment">
+              <option value="" hidden disabled selected>Наименование техники</option>
+              @for ( elem of array_of_equipment_names; track $index ) {
+                <option value="{{ elem.id }}">{{ elem.name }}</option>
+              }
+            </select>
+          </div>
+          <div
+            class="div__the_background_of_the_control_buttons"
+          >
+            <button (click)="hidingTheModalWindow('employee_equipment')">Отмена</button>
+            <button (click)="sendingDataToAddTheRatioOfAnEmployeeToATechnique();hidingTheModalWindow('employee_equipment')">Добавление</button>
+          </div>
+        </div>
+        <div
+          class="div__the_modal_window_for_the_successful_deletion"
+          [style]="{display: showing_the_employee_removal_window}"
+        >
+          <h3>Сотрудник(ца) {{ employee_s_full_name }} успешно удален(на)!</h3>
+          <div
+            class="div__the_background_of_the_control_buttons"
+          >
+            <button (click)="hidingTheModalWindowForDeletingEmployees()">Отлично</button>
+          </div>
+        </div>
+        <div
+          class="div__the_modal_window_for_the_successful_deletion"
+          [style]="{display: showing_the_modal_window_for_removing_equipment}"
+        >
+          <h3>Техника {{ name_of_the_remote_equipment }} успешно удалена!</h3>
+          <div
+            class="div__the_background_of_the_control_buttons"
+          >
+            <button (click)="hidingTheModalWindowForDeletingEquipment()">Отлично</button>
+          </div>
+        </div>
+        <div
+          class="div__the_modal_window_for_the_successful_deletion"
+          [style]="{display: showing_a_modal_window_for_deleting_a_type_of_technique}"
+        >
+          <h3>Тип техники {{ remote_type_of_equipment }} успешно удалён!</h3>
+          <div
+            class="div__the_background_of_the_control_buttons"
+          >
+            <button (click)="hidingTheModalWindowForDeletingATypeOfTechnique()">Отлично</button>
+          </div>
+        </div>
+        <div
+          class="div__the_modal_window_for_the_successful_deletion"
+          [style]="{display: showing_the_modal_window_for_removing_the_technician_employee_bundle}"
+        >
+          <h3>Техника {{ employee_technician_object.name }} у сотрудника(цы) {{ employee_technician_object.fcs }} успешна удалена!</h3>
+          <div
+            class="div__the_background_of_the_control_buttons"
+          >
+            <button (click)="hidingTheModalWindowForDeletingTheTechnicianEmployeeBundle()">Отлично</button>
+          </div>
+        </div>
+        <div
+          class="div__modal_editing_window"
+          [style]="{display:showing_the_employee_editing_window}"
+        >
+          <input placeholder="ФИО сотрудника" [(ngModel)]="the_object_of_the_employee_being_edited.fcs" />
+          <input placeholder="Номер кабинета" [(ngModel)]="the_object_of_the_employee_being_edited.office" />
+          <div
+            class="div__the_background_of_the_control_buttons"
+          >
+            <button (click)="hidingTheChangeWindow('staff')">Отмена</button>
+            <button (click)="sendingChangesToTheEmployeesFullName();hidingTheChangeWindow('staff')">Отправить</button>
+          </div>
+        </div>
+        <div
+          class="div__modal_editing_window"
+          [style]="{display:showing_a_modal_window_for_changing_the_technique}"
+        >
+          <input placeholder="Наименование техники" [(ngModel)]="the_object_of_the_edited_technique.name" />
+          <select [(ngModel)]="the_object_of_the_edited_technique.type">
+            <option value="{{ the_object_of_the_edited_technique.type }}">{{ the_object_of_the_edited_technique.type }}</option>
+            @for ( type of an_array_of_all_types_of_equipment; track $index ) {
+              <option value="{{ type }}">{{ type }}</option>
+            }
+          </select>
+          <div
+            class="div__the_background_of_the_control_buttons"
+          >
+            <button (click)="hidingTheChangeWindow('technic')">Отмена</button>
+            <button (click)="sendingChangesToTheEmployeesFullName();hidingTheChangeWindow('staff')">Отправить</button>
+          </div>
+        </div>
+        <div
+          class="div__modal_editing_window"
+          [style]="{display: showing_a_modal_window_for_editing_a_type_of_technique}"
+        >
+          <input placeholder="Наименование типа техники" [(ngModel)]="an_object_of_the_type_of_equipment_being_edited.type" />
+          <div
+            class="div__the_background_of_the_control_buttons"
+          >
+            <button (click)="hidingTheChangeWindow('type_of_equipment')">Отмена</button>
+            <button (click)="sendingAModifiedTypeOfEquipment();hidingTheChangeWindow('type_of_equipment')">Отправить</button>
+          </div>
+        </div>
+        <div
+          class="div__modal_editing_window"
+          [style]="{display:showing_the_modal_window_for_removing_the_employee_technician_bundle}"
+        >
+          <select [(ngModel)]="the_object_of_editing_the_employee_technician_bundle.fcs">
+            <option value="{{ the_object_of_editing_the_employee_technician_bundle.fcs }}">{{ the_object_of_editing_the_employee_technician_bundle.fcs }}</option>
+            @for ( fcs of list_of_full_names_of_all_employees; track $index ) {
+              <option value="{{ fcs }}">{{ fcs }}</option>
+            }
+          </select>
+          <select [(ngModel)]="the_object_of_editing_the_employee_technician_bundle.name">
+            <option value="{{ name_of_the_employee_s_current_equipment }}">{{ name_of_the_employee_s_current_equipment }}</option>
+            @for ( name of list_of_names_of_all_equipment; track $index ) {
+              <option value="{{ name }}">{{ name }}</option>
+            }
+          </select>
+          <div
+            class="div__the_background_of_the_control_buttons"
+          >
+            <button (click)="hidingTheChangeWindow('employee_equipment')">Отмена</button>
+            <button (click)="sendingAnEditedEmployeeTechnicianBundle();hidingTheChangeWindow('employee_equipment')">Отправить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
